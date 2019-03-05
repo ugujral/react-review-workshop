@@ -22,15 +22,40 @@ class App extends React.Component {
     });
   }
   render() {
+    // var whatToRender;
+    // if (
+    //   this.state.first === this.props.first &&
+    //   this.state.last === this.props.last
+    // ) {
+    //   whatToRender = <List />;
+    // } else {
+    //   whatToRender = (
+    //     <div>
+    //       {this.state.first} {this.state.last} <br />
+    //       First: <input name="first" onChange={this.handleFirst} />
+    //       <br />
+    //       Last: <input name="last" onChange={this.handleLast} />
+    //       <br />
+    //       <br />
+    //     </div>
+    //   );
+    // }
     return (
       <div>
-        {this.state.first} {this.state.last} <br />
-        First: <input name="first" onChange={this.handleFirst} />
-        <br />
-        Last: <input name="last" onChange={this.handleLast} />
-        <br />
-        <br />
-        <List />
+        {this.state.first === this.props.first &&
+        this.state.last === this.props.last ? (
+          <List />
+        ) : (
+          <div>
+            {this.state.first} {this.state.last} <br />
+            First: <input name="first" onChange={this.handleFirst} />
+            <br />
+            Last: <input name="last" onChange={this.handleLast} />
+            <br />
+            <br />
+          </div>
+        )}
+        {/* <div>{whatToRender}</div> */}
       </div>
     );
   }
