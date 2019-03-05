@@ -1,4 +1,5 @@
 import React from 'react';
+import ListEntry from './ListEntry.jsx';
 
 class List extends React.Component {
   constructor(props) {
@@ -32,8 +33,13 @@ class List extends React.Component {
           Add to list: <input name="textField" onChange={this.handleInput} />
           <input value="submit" type="submit" />
         </form>
-        <div>This is text will be added: {this.state.text}</div>
-        <div>The array: {this.state.items}</div>
+        <div>This text will be added: {this.state.text}</div>
+        {/* <div>The array: {this.state.items}</div> */}
+        <div>
+          {this.state.items.map((item, index) => {
+            return <ListEntry item={item} key={index} />;
+          })}
+        </div>
       </span>
     );
   }
