@@ -1,0 +1,37 @@
+{
+  "name": "react-review-workshop",
+  "version": "1.0.0",
+  "description": "React review for HRLA 28",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server",
+    "build": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DDRosario/react-review-workshop.git"
+  },
+  "keywords": [
+    "react",
+    "workshop"
+  ],
+  "author": "ddrosario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DDRosario/react-review-workshop/issues"
+  },
+  "homepage": "https://github.com/DDRosario/react-review-workshop#readme",
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
