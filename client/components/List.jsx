@@ -32,7 +32,7 @@ class List extends React.Component {
           Add to list: <input name="textField" onChange={this.handleInput} />
           <input value="submit" type="submit" />
         </form>
-        <div>This is text will be added: {this.state.text}</div>
+        <div>This text will be added: {this.state.text}</div>
         <div>The array: {this.state.items}</div>
       </span>
     );
