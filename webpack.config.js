@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.js[x]?/,
         include: SRC_DIR,
         loader: 'babel-loader',
         query: {
