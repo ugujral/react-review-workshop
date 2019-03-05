@@ -10,6 +10,7 @@ class List extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   handleInput(e) {
     this.setState({
@@ -25,6 +26,10 @@ class List extends React.Component {
     });
     document.getElementById('listForm').reset();
   }
+  handleClick(e) {
+    console.log('I was clicked');
+    console.log(e.target.innerHTML);
+  }
   render() {
     return (
       <span>
@@ -36,8 +41,15 @@ class List extends React.Component {
         <div>This text will be added: {this.state.text}</div>
         {/* <div>The array: {this.state.items}</div> */}
         <div>
+          <div>Items:</div>
           {this.state.items.map((item, index) => {
-            return <ListEntry item={item} key={index} />;
+            return (
+              <ListEntry
+                item={item}
+                key={index}
+                handleClick={this.handleClick}
+              />
+            );
           })}
         </div>
       </span>
