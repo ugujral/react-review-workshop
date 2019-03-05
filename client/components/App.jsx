@@ -8,12 +8,16 @@ class App extends React.Component {
       last: ''
     };
     this.handleFirst = this.handleFirst.bind(this);
+    this.handleLast = this.handleLast.bind(this);
   }
   handleFirst(e) {
-    console.log(this);
-    console.log(e.target.value);
     this.setState({
       first: e.target.value
+    });
+  }
+  handleLast(e) {
+    this.setState({
+      last: e.target.value
     });
   }
   render() {
@@ -21,6 +25,8 @@ class App extends React.Component {
       <div>
         {this.state.first} {this.state.last} <br />
         First: <input name="first" onChange={this.handleFirst} />
+        <br />
+        Last: <input name="last" onChange={this.handleLast} />
       </div>
     );
   }
