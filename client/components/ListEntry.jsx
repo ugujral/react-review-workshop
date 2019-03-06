@@ -3,7 +3,9 @@ import React from 'react';
 const ListEntry = props => {
   return (
     <span>
-      <div onClick={props.handleClick}>{props.item}</div>
+      <div>{props.item}</div>
+      <button onClick={() => props.handleClick(props.index)}>Update</button>
+      <button onClick={() => props.handleDelete(props.index)}>Delete</button>
     </span>
   );
 };

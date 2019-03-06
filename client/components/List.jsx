@@ -11,6 +11,7 @@ class List extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   handleInput(e) {
     this.setState({
@@ -26,9 +27,21 @@ class List extends React.Component {
     });
     document.getElementById('listForm').reset();
   }
-  handleClick(e) {
+  handleClick(index) {
+    var oldArrayFromState = [...this.state.items]; //es6 way of slice
     console.log('I was clicked');
-    console.log(e.target.innerHTML);
+    var updated = prompt('update:', oldArrayFromState[index]);
+    oldArrayFromState[index] = updated;
+    this.setState({
+      items: oldArrayFromState
+    });
+  }
+  handleDelete(index) {
+    var copyOfItems = [...this.state.items];
+    copyOfItems.splice(index, 1);
+    this.setState({
+      items: copyOfItems
+    });
   }
   render() {
     return (
@@ -47,7 +60,9 @@ class List extends React.Component {
               <ListEntry
                 item={item}
                 key={index}
+                index={index}
                 handleClick={this.handleClick}
+                handleDelete={this.handleDelete}
               />
             );
           })}
